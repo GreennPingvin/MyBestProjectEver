@@ -1,6 +1,6 @@
 import webpack from "webpack";
 import { buildPlugins } from "./buildPlugins";
-import { buildLoaders } from "./buildLoader";
+import { buildLoaders } from "./buildLoaders";
 import { buildResolvers } from "./buildResolvers";
 import { BuildOptions } from "./types/config";
 import { buildDevServer } from "./buildDevServer";
@@ -18,15 +18,12 @@ export function buildWebpackConfig(
       path: paths.build,
       clean: true,
     },
-    devtool: isDev ? "inline-source-map" : false,
+    devtool: isDev ? "inline-source-map" : undefined,
     plugins: buildPlugins(options),
     module: {
-      rules: buildLoaders(),
+      rules: buildLoaders(options),
     },
     resolve: buildResolvers(),
     devServer: isDev ? buildDevServer(options) : undefined,
-    stats: {
-      children: true,
-    },
   };
 }
