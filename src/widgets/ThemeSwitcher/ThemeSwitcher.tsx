@@ -3,8 +3,7 @@ import { ButtonHTMLAttributes } from "react";
 import DarkIcon from "shared/assets/theme-dark.svg";
 import LightIcon from "shared/assets/theme-light.svg";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Button } from "shared/ui/Button";
-import { ThemeButton } from "shared/ui/Button/Button";
+import { Button, ThemeButton } from "shared/ui/Button";
 import cls from "./ThemeSwitcher.module.scss";
 
 interface ThemeSwitcherProps extends ButtonHTMLAttributes<HTMLButtonElement> {
