@@ -21,7 +21,13 @@ export function buildPlugins({
       __IS_DEV__: JSON.stringify(isDev),
     }),
     new CopyPlugin({
-      patterns: [{ from: paths.locales, to: paths.buildLocales }],
+      patterns: [
+        {
+          from: paths.locales,
+          to: paths.buildLocales,
+        },
+      ],
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ];
 }
