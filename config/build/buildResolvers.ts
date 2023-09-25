@@ -1,11 +1,11 @@
-import webpack from "webpack";
-import { BuildOptions } from "./types/config";
+import type webpack from 'webpack'
+import { type BuildOptions } from './types/config'
 
-export function buildResolvers({
-  paths,
+export function buildResolvers ({
+  paths
 }: BuildOptions): webpack.ResolveOptions {
   return {
-    extensions: [".tsx", ".ts", ".js"],
-    modules: [paths.src, "node_modules"],
-  };
+    extensions: ['.tsx', '.ts', '.js'],
+    modules: [paths.src, 'node_modules']
+  }
 }
