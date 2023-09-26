@@ -19,5 +19,7 @@ module.exports = {
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     'i18next/no-literal-string': ['error', { markupOnly: true }],
     '@typescript-eslint/comma-dangle': 'off',
+    '@typescript-eslint/space-before-function-paren': 'off',
+    '@typescript-eslint/indent': 'off',
   },
 }
