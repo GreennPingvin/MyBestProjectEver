@@ -18,5 +18,6 @@ module.exports = {
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     'i18next/no-literal-string': ['error', { markupOnly: true }],
+    '@typescript-eslint/comma-dangle': 'off',
   },
 }
