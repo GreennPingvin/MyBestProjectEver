@@ -9,7 +9,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'i18next'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/naming-convention': 'off',
@@ -17,5 +17,6 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
+    'i18next/no-literal-string': ['error', { markupOnly: true }],
   },
 }
