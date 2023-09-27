@@ -24,5 +24,7 @@
       "strictNullChecks": true
     }
   },
-  "include": ["./config/jest/*.tsx", "src", "./**/*.ts"]
+  "include": ["./config/jest/*.tsx", "src", "./**/*.ts",
+    "config/storybook"
+  ]
 }

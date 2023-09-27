@@ -3,10 +3,14 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['plugin:react/recommended', 'standard-with-typescript'],
+  extends: [
+    'plugin:react/recommended',
+    'standard-with-typescript',
+    'plugin:storybook/recommended',
+  ],
   overrides: [
     {
-      files: ['**/src/**/*.test.{ts,tsx}'],
+      files: ['**/src/**/*.test.{ts,tsx}', '**/src/**/*.stories.{ts,tsx}'],
       rules: { 'i18next/no-literal-string': 'off' },
     },
   ],
@@ -24,10 +28,16 @@ module.exports = {
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     'i18next/no-literal-string': [
       'error',
-      { markupOnly: true, ignoreAttribute: ['data-testid'] },
+      {
+        markupOnly: true,
+        ignoreAttribute: ['data-testid'],
+        exclude: ['**/*.stories.tsx'],
+      },
     ],
     '@typescript-eslint/comma-dangle': 'off',
     '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/indent': 'off',
+    'react/display-name': 'off',
+    '@typescript-eslint/prefer-includes': 'off'
   },
 }

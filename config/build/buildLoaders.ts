@@ -1,5 +1,5 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import type webpack from 'webpack'
+import { buildCssLoader } from './loaders/buildCssLoader'
 import { type BuildOptions } from './types/config'
 
 export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
@@ -9,25 +9,7 @@ export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/
   }
 
-  const scssLoader = {
-    test: /\.s[ac]ss$/i,
-    use: [
-      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-      {
-        loader: 'css-loader',
-        options: {
-          modules: {
-            auto: (resourcePath: string) =>
-              resourcePath.includes('.module.scss'),
-            localIdentName: isDev
-              ? '[path][name]__[local]--[hash:base64:5]'
-              : '[hash:base64:5]'
-          }
-        }
-      },
-      'sass-loader'
-    ]
-  }
+  const scssLoader = buildCssLoader(isDev)
 
   const fileLoader = {
     test: /\.(png|jp?g|gif|woff|woff2)$/,
