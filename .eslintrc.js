@@ -4,7 +4,12 @@ module.exports = {
     es2021: true,
   },
   extends: ['plugin:react/recommended', 'standard-with-typescript'],
-  overrides: [],
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: { 'i18next/no-literal-string': 'off' },
+    },
+  ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -17,7 +22,10 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'i18next/no-literal-string': [
+      'error',
+      { markupOnly: true, ignoreAttribute: ['data-testid'] },
+    ],
     '@typescript-eslint/comma-dangle': 'off',
     '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/indent': 'off',
