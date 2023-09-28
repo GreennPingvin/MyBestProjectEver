@@ -38,6 +38,7 @@ module.exports = {
     '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/indent': 'off',
     'react/display-name': 'off',
-    '@typescript-eslint/prefer-includes': 'off'
+    '@typescript-eslint/prefer-includes': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off'
   },
 }
